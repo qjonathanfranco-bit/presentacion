@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jona Franco | Portafolio Personal</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Estilos Personalizados: Voleibol + Gaming + 80s Retro -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+
+    <!-- NAVBAR CON BOTÓN HAMBURGUESA UNIVERSAL (PC Y MÓVIL) Y MODO OSCURO/CLARO -->
+    <nav class="navbar navbar-expand bg-custom-navbar fixed-top py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+            <!-- Logotipo / Identidad -->
+            <a class="navbar-brand brand-title m-0 d-flex align-items-center" href="#inicio">
+                <i class="bi bi-controller text-info me-2 fs-4"></i>
+                <span>Jona Franco</span>
+            </a>
+
+            <!-- Controles Superiores: Modo Claro/Oscuro y Menú Hamburguesa -->
+            <div class="d-flex align-items-center gap-3">
+                <button id="theme-toggle-btn" class="btn-theme-toggle" type="button" title="Alternar Modo Claro / Oscuro">
+                    <i id="theme-icon" class="bi bi-sun-fill text-warning"></i>
+                    <span id="theme-text" class="d-none d-sm-inline">Modo Claro</span>
+                </button>
+
+                <!-- Botón Hamburguesa universal (PC y Móvil) -->
+                <button id="hamburger-toggle-btn" class="hamburger-btn" type="button" aria-label="Abrir menú de navegación">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- MENÚ LATERAL DESPLEGABLE -->
+    <aside id="custom-nav-menu" class="nav-menu-overlay">
+        <div class="d-flex justify-content-between align-items-center pb-3 border-bottom border-secondary border-opacity-25 mb-3">
+            <span class="fw-bold text-info"><i class="bi bi-compass me-2"></i>Navegación</span>
+            <button id="close-nav-btn" class="btn btn-sm btn-outline-info rounded-circle py-0 px-2" aria-label="Cerrar">&times;</button>
+        </div>
+        <a href="#inicio" class="custom-nav-link"><i class="bi bi-house-door-fill"></i>Inicio</a>
+        <a href="#pasatiempos" class="custom-nav-link"><i class="bi bi-trophy-fill"></i>Voleibol (teamZone)</a>
+        <a href="#intereses" class="custom-nav-link"><i class="bi bi-laptop"></i>Intereses</a>
+        <a href="#horario" class="custom-nav-link"><i class="bi bi-calendar-week-fill"></i>Horario</a>
+        <a href="#musica" class="custom-nav-link"><i class="bi bi-vinyl-fill"></i>Música 80s & Géneros</a>
+        <a href="#juegos" class="custom-nav-link"><i class="bi bi-dpad-fill"></i>Videojuegos Favoritos</a>
+        <a href="#contacto" class="custom-nav-link"><i class="bi bi-envelope-check-fill"></i>Contacto Directo</a>
+        <a href="#frase" class="custom-nav-link"><i class="bi bi-chat-quote-fill"></i>Frase</a>
+    </aside>
+
+    <!-- CARRUSEL PRINCIPAL (HERO SECTION) -->
+    <section id="inicio" class="hero-section">
+        <div id="carruselPresentacion" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carruselPresentacion" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carruselPresentacion" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carruselPresentacion" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="WhatsApp Image 2026-10-29 at 23.45.22 (2).jpeg" class="d-block w-100 main-carousel-img" alt="Jona Franco - Presentación">
+                    <div class="carousel-caption d-md-block glass-caption rounded-4 p-4 shadow-lg">
+                        <h2 class="fw-bold text-white mb-1">¡Hola! Soy Jona Franco</h2>
+                        <p class="text-info mb-0">Estudiante de Ingeniería en Sistemas | Apasionado por la Tecnología</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="WhatsApp Image 2026-10-29 at 23.45.22.jpeg" class="d-block w-100 main-carousel-img" alt="Jona Franco - Deportista">
+                    <div class="carousel-caption d-md-block glass-caption rounded-4 p-4 shadow-lg">
+                        <h2 class="fw-bold text-white mb-1">Pasión por el Deporte & Gaming</h2>
+                        <p class="text-info mb-0">Atleta de Voleibol en teamZone La Paz y aficionado a los Videojuegos</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="WhatsApp Image 2026-10-29 at 23.45.22 (1).jpeg" class="d-block w-100 main-carousel-img" alt="Jona Franco - Desarrollo">
+                    <div class="carousel-caption d-md-block glass-caption rounded-4 p-4 shadow-lg">
+                        <h2 class="fw-bold text-white mb-1">Desarrollo Web & Creatividad</h2>
+                        <p class="text-info mb-0">Creando interfaces modernas, dinámicas y de alto rendimiento</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselPresentacion" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselPresentacion" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3"></span>
+            </button>
+        </div>
+    </section>
+
+    <div class="container py-5">
+
+        <!-- SECCIÓN 1: PASATIEMPOS (VOLEIBOL TEAMZONE) -->
+        <section id="pasatiempos" class="py-4 my-4">
+            <div class="section-volleyball">
+                <h2 class="text-center section-title">Pasatiempos & Deporte</h2>
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="p-4 bg-glass rounded-4 shadow-sm">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="volleyball-badge"><i class="bi bi-award-fill me-1"></i> teamZone La Paz</span>
+                                <span class="badge bg-info text-dark">Competencia Activa</span>
+                            </div>
+                            <h4 class="text-primary fw-bold mb-3">Pasión por el Voleibol</h4>
+                            <p class="lead text-secondary-custom fs-6">
+                                En mis tiempos libres me dedico con entusiasmo al <strong>voleibol</strong>. Actualmente compito de manera activa en la asociación de la ciudad de <strong>La Paz</strong>, defendiendo los colores de mi equipo <strong>teamZone</strong> en torneos de alto nivel.
+                            </p>
+                            <p class="text-muted small mb-0">
+                                <i class="bi bi-lightning-charge-fill text-warning me-1"></i>
+                                Valores aprendidos: Disciplina, trabajo en equipo, reflejos rápidos y mentalidad competitiva.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="image-hover-zoom rounded-4 shadow overflow-hidden border border-info border-opacity-25">
+                            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80" class="img-fluid w-100 rounded-4" alt="Voleibol teamZone La Paz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: INTERESES -->
+        <section id="intereses" class="py-4 my-4">
+            <h2 class="text-center section-title">Áreas de Interés</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 custom-card border-0 rounded-4 p-4">
+                        <div class="card-body text-center">
+                            <div class="icon-box text-primary mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-laptop fs-2"></i>
+                            </div>
+                            <h4 class="card-title fw-bold">Ingeniería en Sistemas</h4>
+                            <p class="card-text text-secondary-custom">
+                                Formación académica enfocada en desarrollo web, arquitecturas modernas de software, lógica de programación y resolución de problemas tecnológicos con impacto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 custom-card border-0 rounded-4 p-4">
+                        <div class="card-body text-center">
+                            <div class="icon-box text-primary mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="bi bi-translate fs-2"></i>
+                            </div>
+                            <h4 class="card-title fw-bold">Dominio del Idioma Inglés</h4>
+                            <p class="card-text text-secondary-custom">
+                                Práctica y perfeccionamiento constante del idioma inglés para el estudio de tecnologías emergentes, documentación técnica global y proyección profesional internacional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: HORARIO (GOOGLE SHEETS) -->
+        <section id="horario" class="py-4 my-4">
+            <h2 class="text-center section-title">Horario de Actividades</h2>
+            <p class="text-center text-muted mb-4">Sincronización semanal académica y deportiva desde Google Sheets.</p>
+            <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden border border-primary border-opacity-25">
+                <iframe src="https://docs.google.com/spreadsheets/d/1EwQnKAoCikzZJOwPzCM-MsV7R7QnSb228aC5VHREQ5w/edit?usp=sharing" title="Horario de actividades"></iframe>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://docs.google.com/spreadsheets/d/1EwQnKAoCikzZJOwPzCM-MsV7R7QnSb228aC5VHREQ5w/edit?usp=sharing" target="_blank" class="btn btn-primary-custom px-4 py-2 rounded-pill shadow-sm">
+                    <i class="bi bi-file-earmark-spreadsheet me-2"></i> Abrir hoja en Google Sheets
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: MÚSICA & GÉNEROS (ESTÉTICA 80s + TOP 10 INTERACTIVO) -->
+        <section id="musica" class="py-4 my-5">
+            <div class="section-music-80s">
+                <div class="text-center mb-4">
+                    <span class="badge badge-synthwave px-3 py-2 rounded-pill text-uppercase mb-2">
+                        <i class="bi bi-cassette-fill me-1"></i> Synthwave & Retro Wave 80s
+                    </span>
+                    <h2 class="neon-title-80s fs-1">Música Favorita & Artistas</h2>
+                    <p class="text-info">Filtra por género musical y haz clic en cualquier artista o grupo para ver su <strong>Top 10 de mejores canciones</strong>.</p>
+                </div>
+
+                <!-- BOTONES DE FILTRADO DE MÚSICA POR GÉNERO -->
+                <div class="filter-btn-group mb-4">
+                    <button class="music-filter-btn active" data-music-filter="todos">
+                        <i class="bi bi-collection-play-fill"></i> Todos los Géneros
+                    </button>
+                    <button class="music-filter-btn" data-music-filter="balada">
+                        <i class="bi bi-heart-pulse-fill"></i> Balada & Bolero (3)
+                    </button>
+                    <button class="music-filter-btn" data-music-filter="pop">
+                        <i class="bi bi-stars"></i> Pop / Funk & Synth (3)
+                    </button>
+                    <button class="music-filter-btn" data-music-filter="urbano">
+                        <i class="bi bi-fire"></i> Urbano & Trap (3)
+                    </button>
+                    <button class="music-filter-btn" data-music-filter="indie">
+                        <i class="bi bi-music-note-beamed"></i> Indie & Acústico (3)
+                    </button>
+                    <button class="music-filter-btn" data-music-filter="retro-80s">
+                        <i class="bi bi-disc-fill"></i> Rock & Retro 80s (3)
+                    </button>
+                </div>
+
+                <!-- CONTENEDOR DE ARTISTAS CON 3 EXPONENTES POR CADA GÉNERO (15 ARTISTAS EN TOTAL) -->
+                <div class="row g-4" id="music-container">
+
+                    <!-- GÉNERO 1: BALADA & CLÁSICOS (3 ARTISTAS) -->
+                    <!-- 1.1 José José -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="balada">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="joase.png" class="music-avatar-80s mb-3" alt="José José" onerror="this.src='https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">José José</h4>
+                                <span class="badge bg-primary bg-opacity-75 rounded-pill px-3 py-1 mb-2">Balada Romántica</span>
+                                <p class="text-light small opacity-75 mt-2">El Príncipe de la Canción. Vocales inmortales que marcaron la historia en los años 70s y 80s.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="jose-jose">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.2 Luis Miguel -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="balada">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="luis.jpg" class="music-avatar-80s mb-3" alt="Luis Miguel" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Luis Miguel</h4>
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2">Bolero & Pop Latino</span>
+                                <p class="text-light small opacity-75 mt-2">El Sol de México. Arreglos magistrales, trompetas brillantes e interpretaciones insuperables.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="luis-miguel">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.3 Frank Sinatra -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="balada">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="sinatra.jpg" class="music-avatar-80s mb-3" alt="Frank Sinatra" onerror="this.src='https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Frank Sinatra</h4>
+                                <span class="badge bg-info text-dark rounded-pill px-3 py-1 mb-2">Classic Jazz & Big Band</span>
+                                <p class="text-light small opacity-75 mt-2">La Voz. Ícono de la era dorada con clásicos eternos como My Way y New York.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="frank-sinatra">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GÉNERO 2: POP / FUNK & SYNTH (3 ARTISTAS) -->
+                    <!-- 2.1 Bruno Mars -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="pop">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="bruno.jpg" class="music-avatar-80s mb-3" alt="Bruno Mars" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Bruno Mars</h4>
+                                <span class="badge bg-danger bg-opacity-75 rounded-pill px-3 py-1 mb-2">Pop / Funk / R&B</span>
+                                <p class="text-light small opacity-75 mt-2">Ritmo bailable, bajos funk energéticos y un sonido retro 80s moderno inconfundible.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="bruno-mars">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2 Michael Jackson -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="pop">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="michael.jpg" class="music-avatar-80s mb-3" alt="Michael Jackson">
+                                <h4 class="fw-bold text-white mb-1">Michael Jackson</h4>
+                                <span class="badge badge-synthwave rounded-pill px-3 py-1 mb-2">Rey del Pop 80s</span>
+                                <p class="text-light small opacity-75 mt-2">El mayor referente mundial de la música pop con álbumes que marcaron décadas como Thriller y Bad.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="michael-jackson">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3 The Weeknd -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="pop">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="weekend.jpg" class="music-avatar-80s mb-3" alt="The Weeknd">
+                                <h4 class="fw-bold text-white mb-1">The Weeknd</h4>
+                                <span class="badge bg-purple-neon rounded-pill px-3 py-1 mb-2">Synthwave & Electro R&B</span>
+                                <p class="text-light small opacity-75 mt-2">Sintetizadores análogos, baterías con reverb y un concepto sonoro futurista ochentero.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="the-weeknd">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GÉNERO 3: URBANO & TRAP (3 ARTISTAS) -->
+                    <!-- 3.1 Mora -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="urbano">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="mora.jpg" class="music-avatar-80s mb-3" alt="Mora" onerror="this.src='https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Mora</h4>
+                                <span class="badge bg-secondary rounded-pill px-3 py-1 mb-2">Urbano / Melodic Trap</span>
+                                <p class="text-light small opacity-75 mt-2">Sintetizadores profundos, melodías envolventes y álbumes aclamados como MicroDosis y PARAÍSO.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="mora">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.2 Yan Block -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="urbano">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="yan.jpg" class="music-avatar-80s mb-3" alt="Yan Block" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Yan Block</h4>
+                                <span class="badge bg-dark border border-secondary rounded-pill px-3 py-1 mb-2">Trap Latino / Flow</span>
+                                <p class="text-light small opacity-75 mt-2">Flow contundente, rimas introspectivas y lírica de superación en la escena urbana underground.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="yan-block">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3 Bad Bunny -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="urbano">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="badBunny.jpg" class="music-avatar-80s mb-3" alt="Bad Bunny">
+                                <h4 class="fw-bold text-white mb-1">Bad Bunny</h4>
+                                <span class="badge bg-danger rounded-pill px-3 py-1 mb-2">Reggaetón & Urbano Global</span>
+                                <p class="text-light small opacity-75 mt-2">El artista más escuchado a nivel mundial, fusionando ritmos caribeños con trap y pop.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="bad-bunny">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GÉNERO 4: INDIE & ACÚSTICO (3 ARTISTAS) -->
+                    <!-- 4.1 Josean Log -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="indie">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="josean.jpg" class="music-avatar-80s mb-3" alt="Josean Log" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80'">
+                                <h4 class="fw-bold text-white mb-1">Josean Log</h4>
+                                <span class="badge bg-success rounded-pill px-3 py-1 mb-2">Indie Folk / Ukelele</span>
+                                <p class="text-light small opacity-75 mt-2">Armonías cálidas, letras sencillas y reconfortantes que inspiran serenidad y optimismo.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="josean-log">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.2 Kevin Kaarl -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="indie">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="kevin.jpg" class="music-avatar-80s mb-3" alt="Kevin Kaarl">
+                                <h4 class="fw-bold text-white mb-1">Kevin Kaarl</h4>
+                                <span class="badge bg-info text-dark rounded-pill px-3 py-1 mb-2">Folk Nostálgico</span>
+                                <p class="text-light small opacity-75 mt-2">Guitarras acústicas profundas, trompetas melancólicas y éxitos como San Lucas y Colapso.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="kevin-kaarl">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.3 Ed Maverick -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="indie">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="ed.jpg" class="music-avatar-80s mb-3" alt="Ed Maverick">
+                                <h4 class="fw-bold text-white mb-1">Ed Maverick</h4>
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-1 mb-2">Folk Rock Acústico</span>
+                                <p class="text-light small opacity-75 mt-2">Composiciones crudas, rasgueos viscerales y relatos honestos de juventud y desamor.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="ed-maverick">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GÉNERO 5: ROCK & RETRO 80s (3 ARTISTAS/BANDAS) -->
+                    <!-- 5.1 Queen -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="retro-80s">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="queen.jpg" class="music-avatar-80s mb-3" alt="Queen">
+                                <h4 class="fw-bold text-white mb-1">Queen</h4>
+                                <span class="badge bg-danger rounded-pill px-3 py-1 mb-2">Rock de Estadios 80s</span>
+                                <p class="text-light small opacity-75 mt-2">Freddie Mercury y Brian May revolucionaron los sintetizadores y conciertos con Radio Ga Ga y The Game.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="queen">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.2 Soda Stereo -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="retro-80s">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="soda.jpg" class="music-avatar-80s mb-3" alt="Soda Stereo">
+                                <h4 class="fw-bold text-white mb-1">Soda Stereo</h4>
+                                <span class="badge bg-primary rounded-pill px-3 py-1 mb-2">New Wave Latino 80s</span>
+                                <p class="text-light small opacity-75 mt-2">Gustavo Cerati lideró la corriente sonora más vanguardista de habla hispana en la década de 1980.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="soda-stereo">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.3 A-ha & Depeche Mode -->
+                    <div class="col-lg-4 col-md-6 music-card-item" data-genero="retro-80s">
+                        <div class="music-card-80s text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <img src="a_ha.jpg" class="music-avatar-80s mb-3" alt="Synthpop 80s">
+                                <h4 class="fw-bold text-white mb-1">A-ha & Depeche Mode</h4>
+                                <span class="badge badge-synthwave rounded-pill px-3 py-1 mb-2">Pioneros Synthpop</span>
+                                <p class="text-light small opacity-75 mt-2">Los pilares electrónicos de los años 80 que definieron el sonido de sintetizadores y cajas de ritmo.</p>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn-ver-top10 w-100" data-artista-id="aha-synthwave">
+                                    <i class="bi bi-trophy-fill me-1"></i> Ver Top 10 Canciones
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL INTERACTIVO: TOP 10 DE CANCIONES -->
+        <div class="modal fade" id="modalTopMusica" tabindex="-1" aria-labelledby="modal-artista-titulo" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content modal-retro-80s">
+                    <div class="modal-header border-bottom border-secondary border-opacity-25 pb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <img id="modal-artista-foto" src="" class="rounded-circle border border-2 border-info" style="width: 55px; height: 55px; object-fit: cover;" alt="">
+                            <div>
+                                <h4 class="modal-title fw-bold text-white mb-0" id="modal-artista-titulo">Nombre del Artista</h4>
+                                <span id="modal-artista-subtitulo" class="badge badge-synthwave small">Género</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body py-4">
+                        <p id="modal-artista-desc" class="text-white-50 small mb-4"></p>
+                        <h5 class="fw-bold text-info mb-3 d-flex align-items-center">
+                            <i class="bi bi-music-note-list me-2"></i> Top 10 Canciones Más Destacadas
+                        </h5>
+                        <!-- Lista inyectada dinámicamente con JavaScript -->
+                        <div id="modal-lista-top10" class="pe-1" style="max-height: 400px; overflow-y: auto;"></div>
+                    </div>
+                    <div class="modal-footer border-top border-secondary border-opacity-25">
+                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 5: VIDEOJUEGOS EXPANDIDO -->
+        <section id="juegos" class="py-4 my-5">
+            <div class="section-gaming">
+                <h2 class="text-center section-title">Catálogo de Videojuegos</h2>
+                <p class="text-center text-secondary-custom mb-4">
+                    Explora mi catálogo de videojuegos preferidos filtrando al instante por categoría, estilo de juego y plataforma.
+                </p>
+
+                <!-- BOTONES DE FILTRADO DE VIDEOJUEGOS -->
+                <div class="filter-btn-group">
+                    <button class="game-filter-btn active" data-filter="todos">
+                        <i class="bi bi-grid-fill"></i> Todos
+                    </button>
+                    <button class="game-filter-btn" data-filter="battle-royale">
+                        <i class="bi bi-shield-shaded"></i> Battle Royale (Fortnite)
+                    </button>
+                    <button class="game-filter-btn" data-filter="sandbox">
+                        <i class="bi bi-box-fill"></i> Sandbox & Aventura (Minecraft)
+                    </button>
+                    <button class="game-filter-btn" data-filter="moba">
+                        <i class="bi bi-phone-fill"></i> MOBA (Mobile Legends)
+                    </button>
+                    <button class="game-filter-btn" data-filter="shooter">
+                        <i class="bi bi-crosshair"></i> Shooters & FPS
+                    </button>
+                </div>
+
+                <!-- CONTENEDOR DE TARJETAS DE VIDEOJUEGOS -->
+                <div class="row g-4" id="games-container">
+
+                    <!-- JUEGO 1: FORTNITE -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="battle-royale">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="FORTNITE.jpg" class="game-card-img" alt="Fortnite" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80'">
+                                <span class="game-card-badge badge-fortnite">Battle Royale</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-controller me-2"></i>Fortnite</h4>
+                                    <div class="text-info small mb-3">Capítulo 2, Temporada 2 & Zero Build</div>
+                                    <p class="text-secondary-custom small">
+                                        Uno de mis juegos favoritos por diversión con amigos. Recordando siempre las temporadas clásicas con mecánicas de construcción, batallas épicas y pases de batalla.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info text-dark">Plataforma: PC / Consola</span>
+                                    <span class="text-muted small">Estilo: Dinámico</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 2: MINECRAFT -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="sandbox">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="mine.jpg" class="game-card-img" alt="Minecraft">
+                                <span class="game-card-badge badge-minecraft">Sandbox & Aventura</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-success mb-1"><i class="bi bi-box-seam me-2"></i>Minecraft</h4>
+                                    <div class="text-success small mb-3">Supervivencia / Redstone & Servidores</div>
+                                    <p class="text-secondary-custom small">
+                                        El rey de la creatividad y la exploración infinita. Me apasiona la construcción arquitectónica, los circuitos lógicos de redstone y el modo supervivencia técnico.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success text-white">Plataforma: PC Java / Bedrock</span>
+                                    <span class="text-muted small">Estilo: Creativo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 3: MOBILE LEGENDS -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="moba">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="MOBIL.jpg" class="game-card-img" alt="Mobile Legends" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80'">
+                                <span class="game-card-badge badge-moba">MOBA 5v5</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-phone me-2"></i>Mobile Legends: Bang Bang</h4>
+                                    <div class="text-info small mb-3">Rango Actual: Épico IV</div>
+                                    <p class="text-secondary-custom small">
+                                        Título competitivo en dispositivos móviles en el que me encuentro subiendo de liga. Conociendo a fondo el micro y macro-juego, control de líneas y emboscadas en equipo.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary text-white">Plataforma: Android / iOS</span>
+                                    <span class="text-muted small">Rol: Mago / Asesino</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 4: VALORANT & SHOOTERS -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="shooter">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="shooter.webp" class="game-card-img" alt="Shooter Táctico">
+                                <span class="game-card-badge badge-shooter">FPS Táctico</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-danger mb-1"><i class="bi bi-crosshair me-2"></i>Shooters Competitivos</h4>
+                                    <div class="text-danger small mb-3">Puntería & Comunicación Táctica</div>
+                                    <p class="text-secondary-custom small">
+                                        Puntería precisa, reflejos de milisegundos y posicionamiento en mapas estratégicos. Excelente para poner a prueba la rapidez mental bajo presión de tiempo.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-danger text-white">Plataforma: PC</span>
+                                    <span class="text-muted small">Competitivo 5v5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 5: WARZONE -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="battle-royale">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="warzone.jpg" class="game-card-img" alt="Warzone">
+                                <span class="game-card-badge badge-fortnite">Battle Royale Militar</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-shield-fill me-2"></i>Warzone / Apex</h4>
+                                    <div class="text-info small mb-3">Supervivencia en Squads</div>
+                                    <p class="text-secondary-custom small">
+                                        Partidas de alta adrenalina donde la sincronización táctica y el manejo de armas deciden al ganador entre más de 100 jugadores simultáneos.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info text-dark">Plataforma: PC / Consola</span>
+                                    <span class="text-muted small">Battle Royale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JUEGO 6: ROBLOX & TERRARIA -->
+                    <div class="col-lg-4 col-md-6 game-card" data-categoria="sandbox">
+                        <div class="game-card-inner">
+                            <div class="game-card-img-wrapper">
+                                <img src="roblox.jpg" class="game-card-img" alt="Roblox y Terraria">
+                                <span class="game-card-badge badge-minecraft">Sandbox Comunitario</span>
+                            </div>
+                            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                                <div>
+                                    <h4 class="fw-bold text-success mb-1"><i class="bi bi-joystick me-2"></i>Terraria & Roblox</h4>
+                                    <div class="text-success small mb-3">Mundos 2D / Minijuegos LUA</div>
+                                    <p class="text-secondary-custom small">
+                                        Creación de scripts de programación, mods y aventura en mundos abiertos llenos de jefes, exploración subterránea y construcción cooperativa.
+                                    </p>
+                                </div>
+                                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success text-white">Multiplataforma</span>
+                                    <span class="text-muted small">Aventura & Crafting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="no-games-found" class="text-center py-5" style="display: none;">
+                    <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
+                    <h5 class="text-muted">No se encontraron juegos en esta categoría.</h5>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: FORMULARIO COMPLETO DE CONTACTO -->
+        <section id="contacto" class="py-4 my-5">
+            <div class="section-form">
+                <h2 class="text-center section-title">Ponte en Contacto</h2>
+                <p class="text-center text-secondary-custom mb-4">
+                    ¿Tienes alguna consulta académica, propuesta de proyecto tecnológico o te gustaría coordinar partidos de voleibol? Completa el formulario y te responderé con la mayor brevedad.
+                </p>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+
+                        <!-- CONTENEDOR DINÁMICO DE ALERTAS GENERALES -->
+                        <div id="form-alert-container"></div>
+
+                        <form id="contact-form" novalidate>
+                            <div class="row g-3">
+                                
+                                <!-- Campo: Nombre -->
+                                <div class="col-md-6">
+                                    <label for="campo-nombre" class="form-label">
+                                        <i class="bi bi-person-fill text-info me-1"></i> Nombre: *
+                                    </label>
+                                    <input type="text" class="form-control custom-input" id="campo-nombre" placeholder="Ej: Jona" required>
+                                </div>
+
+                                <!-- Campo: Apellidos -->
+                                <div class="col-md-6">
+                                    <label for="campo-apellidos" class="form-label">
+                                        <i class="bi bi-person-badge-fill text-info me-1"></i> Apellidos: *
+                                    </label>
+                                    <input type="text" class="form-control custom-input" id="campo-apellidos" placeholder="Ej: Franco" required>
+                                </div>
+
+                                <!-- Campo: Correo Electrónico -->
+                                <div class="col-md-6">
+                                    <label for="campo-correo" class="form-label">
+                                        <i class="bi bi-envelope-at-fill text-info me-1"></i> Correo Electrónico: *
+                                    </label>
+                                    <input type="email" class="form-control custom-input" id="campo-correo" placeholder="ejemplo@correo.com" required>
+                                </div>
+
+                                <!-- Campo: Teléfono / WhatsApp -->
+                                <div class="col-md-6">
+                                    <label for="campo-telefono" class="form-label">
+                                        <i class="bi bi-telephone-fill text-info me-1"></i> Teléfono / WhatsApp: *
+                                    </label>
+                                    <input type="tel" class="form-control custom-input" id="campo-telefono" placeholder="Ej: 62985912" required>
+                                </div>
+
+                                <!-- Campo: Ciudad / País -->
+                                <div class="col-md-6">
+                                    <label for="campo-ciudad" class="form-label">
+                                        <i class="bi bi-geo-alt-fill text-info me-1"></i> Ciudad / País: *
+                                    </label>
+                                    <input type="text" class="form-control custom-input" id="campo-ciudad" placeholder="Ej: La Paz, Bolivia" required>
+                                </div>
+
+                                <!-- Campo: Motivo de Contacto -->
+                                <div class="col-md-6">
+                                    <label for="campo-motivo" class="form-label">
+                                        <i class="bi bi-card-checklist text-info me-1"></i> Motivo de Contacto: *
+                                    </label>
+                                    <select class="form-select custom-input" id="campo-motivo" required>
+                                        <option value="" selected disabled>Selecciona un motivo...</option>
+                                        <option value="Propuesta de Proyecto / Desarrollo Web">Propuesta de Proyecto / Desarrollo Web</option>
+                                        <option value="Voleibol (Torneos / teamZone / Amistosos)">Voleibol (Torneos / teamZone / Amistosos)</option>
+                                        <option value="Gaming / Partidas Cooperativas">Gaming / Partidas Cooperativas (Fortnite/ML/Minecraft)</option>
+                                        <option value="Networking / Consulta Universitaria">Networking / Consulta Universitaria</option>
+                                        <option value="Otro motivo general">Otro motivo general</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo: Nivel de Prioridad -->
+                                <div class="col-md-6">
+                                    <label for="campo-prioridad" class="form-label">
+                                        <i class="bi bi-clock-history text-info me-1"></i> Nivel de Urgencia / Prioridad: *
+                                    </label>
+                                    <select class="form-select custom-input" id="campo-prioridad" required>
+                                        <option value="" selected disabled>Selecciona la prioridad...</option>
+                                        <option value="Prioridad Normal">Prioridad Normal (Respuesta en 24-48 hrs)</option>
+                                        <option value="Prioridad Alta">Prioridad Alta (Respuesta en 12-24 hrs)</option>
+                                        <option value="Urgente">Urgente (Respuesta lo antes posible)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Campo: Asunto -->
+                                <div class="col-md-6">
+                                    <label for="campo-asunto" class="form-label">
+                                        <i class="bi bi-chat-left-dots-fill text-info me-1"></i> Asunto: *
+                                    </label>
+                                    <input type="text" class="form-control custom-input" id="campo-asunto" placeholder="Ej: Coordinación de entrenamiento o desarrollo" required>
+                                </div>
+
+                                <!-- Campo: Mensaje Detallado -->
+                                <div class="col-12">
+                                    <label for="campo-mensaje" class="form-label">
+                                        <i class="bi bi-pencil-square text-info me-1"></i> Mensaje Detallado: *
+                                    </label>
+                                    <textarea class="form-control custom-input" id="campo-mensaje" rows="4" placeholder="Escribe aquí tu mensaje en detalle..." required></textarea>
+                                </div>
+
+                                <!-- Casilla de Consentimiento / Términos -->
+                                <div class="col-12">
+                                    <div class="form-check mt-2">
+                                        <input class="form-check-input" type="checkbox" id="campo-terminos" required>
+                                        <label class="form-check-label small text-secondary-custom" for="campo-terminos">
+                                            Acepto que mis datos proporcionados sean utilizados exclusivamente para responder a mi solicitud de contacto.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Botón de Envío -->
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary-custom px-5 py-3 shadow-lg">
+                                        <i class="bi bi-send-fill me-2"></i> Enviar Mensaje
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: FRASE CARACTERÍSTICA -->
+        <section id="frase" class="py-4 my-4">
+            <h2 class="text-center section-title">Frase Característica</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="quote-card-aesthetic text-center p-5 rounded-4 shadow-sm position-relative overflow-hidden">
+                        <i class="bi bi-quote quote-bg-icon"></i>
+                        <h3 class="fst-italic fw-bold text-primary mb-3">"Don't worry, be happy"</h3>
+                        <p class="lead text-secondary-custom mb-0">
+                            Frase inmortalizada en la legendaria canción de Bobby McFerrin. Nos recuerda la importancia de mantener una actitud mental positiva, afrontar los retos cotidianos con calma y no permitir que las preocupaciones nublen nuestra tranquilidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER (REDES SOCIALES OFICIALES) -->
+    <footer class="bg-custom-footer text-white text-center py-5 mt-5">
+        <div class="container">
+            <h3 class="fw-bold tracking-wider mb-2 text-info">MIS REDES SOCIALES</h3>
+            <p class="text-white-50 small mb-4">Conéctate conmigo a través de mis canales y redes directas</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://www.instagram.com/jona_franco0_0?psln=ajZxMnJvYjY3ZGMw" target="_blank" class="social-icon-btn instagram shadow" title="Instagram">
+                    <i class="bi bi-instagram fs-4"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1Fksz97kPd/" target="_blank" class="social-icon-btn facebook shadow" title="Facebook">
+                    <i class="bi bi-facebook fs-4"></i>
+                </a>
+                <a href="https://wa.me/59162985912" target="_blank" class="social-icon-btn whatsapp shadow" title="WhatsApp">
+                    <i class="bi bi-whatsapp fs-4"></i>
+                </a>
+            </div>
+            <hr class="border-secondary opacity-25 w-50 mx-auto my-4">
+            <small class="text-white-50">&copy; 2026 Jona Franco. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle con Popper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de Lógica e Interacciones Dinámicas -->
+    <script src="script.js"></script>
+</body>
+</html>
