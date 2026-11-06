@@ -1,0 +1,433 @@
+:root {
+    --bg-color: #070b19;
+    --card-bg: #111827;
+    --text-color: #f3f4f6;
+    --box-bg: #1f2937;
+    --border-color: #374151;
+}
+
+[data-theme="light"] {
+    --bg-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --box-bg: #f8fafc;
+    --border-color: #cbd5e1;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 10%, #1e293b 0%, var(--bg-color) 80%);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar estilo estadio / deportivo */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #0f172a, #1e3a8a, #0f172a);
+    border-bottom: 3px solid #3b82f6;
+    padding: 15px 35px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { 
+    font-size: 26px; 
+    font-weight: 900; 
+    letter-spacing: 1.5px; 
+    text-transform: uppercase;
+}
+.logo span { color: #38bdf8; }
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.2s;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.nav-link:hover, .nav-link.active { 
+    color: #fff; 
+    background: rgba(59, 130, 246, 0.3);
+    text-shadow: 0 0 10px rgba(56,189,248,0.8);
+}
+
+.theme-btn {
+    background: #f59e0b;
+    border: none;
+    color: #111827;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.menu-toggle span { width: 30px; height: 3px; background-color: white; border-radius: 3px; }
+
+/* Temáticas vibrantes deportivas */
+.theme-wally .accordion-btn { background: linear-gradient(135deg, #0284c7, #0369a1); border-left: 8px solid #38bdf8; }
+.theme-futsal .accordion-btn { background: linear-gradient(135deg, #16a34a, #15803d); border-left: 8px solid #4ade80; }
+.theme-voley .accordion-btn { background: linear-gradient(135deg, #d97706, #b45309); border-left: 8px solid #fbbf24; }
+
+/* Contenedor Principal */
+.main-container { padding: 40px 20px; display: flex; justify-content: center; }
+.content-section { width: 100%; display: flex; justify-content: center; }
+
+.sport-container {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 750px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.accordion-btn {
+    color: white;
+    padding: 22px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.accordion-panel { padding: 30px; }
+
+/* Badge Flotante Deportivo en Imágenes */
+.badge-sport {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Canchas Wally - Estilo Tarjeta Pro */
+.canchas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cancha-card {
+    background: var(--box-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.cancha-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+.cancha-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cancha-card h4 { margin: 10px 0 2px 0; font-size: 16px; font-weight: 800; }
+.cancha-card p { margin: 0; font-size: 12px; opacity: 0.85; }
+
+.cancha-card.selected {
+    border-color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.12);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* Cancha Única Fútbol y Vóley - Imagen Súper Grande */
+.cancha-unica {
+    text-align: center;
+    margin-bottom: 20px;
+    background: var(--box-bg);
+    padding: 15px;
+    border-radius: 14px;
+    border: 2px solid var(--border-color);
+    position: relative;
+}
+
+.cancha-unica img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.descripcion-cancha { font-size: 14px; margin: 0; line-height: 1.6; font-weight: 500; }
+
+/* Caja de Fecha y Hora */
+.reserva-meta-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: var(--box-bg);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+}
+
+.meta-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: #38bdf8;
+}
+
+.meta-field input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Configuración de Precio */
+.config-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: var(--box-bg);
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    border: 2px solid var(--border-color);
+}
+
+.config-precio input {
+    width: 100px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 900;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-box {
+    background-color: var(--box-bg);
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 6px solid #38bdf8;
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-box p { margin: 6px 0; font-size: 16px; font-weight: 700; }
+
+.input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+.input-group input {
+    flex: 1;
+    padding: 14px;
+    font-size: 15px;
+    border: 2px solid var(--border-color);
+    background: var(--box-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    outline: none;
+}
+
+.input-group button {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    transition: transform 0.1s;
+}
+.input-group button:active { transform: scale(0.96); }
+
+/* Lista de Jugadores */
+ul.player-list { list-style: none; padding: 0; margin: 0 0 20px 0; }
+ul.player-list li {
+    background-color: var(--box-bg);
+    border: 2px solid var(--border-color);
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+ul.player-list li::before { content: "⚽ "; font-size: 20px; margin-right: 10px; }
+.theme-wally ul.player-list li::before { content: "🏐 "; }
+.theme-voley ul.player-list li::before { content: "🏐 "; }
+
+.player-info { display: flex; align-items: center; gap: 10px; flex: 1; }
+.player-actions { display: flex; gap: 8px; align-items: center; }
+
+.btn-check-asistencia, .btn-check-pago {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-check-asistencia { background: #64748b; color: white; }
+.btn-check-asistencia.confirmado { background: #3b82f6; }
+
+.btn-check-pago { background: #ef4444; color: white; }
+.btn-check-pago.pagado { background: #22c55e; }
+
+.remove-btn { color: #f87171; cursor: pointer; font-size: 20px; font-weight: bold; margin-left: 8px; }
+.remove-btn:hover { color: #ef4444; }
+
+/* Pagos */
+.payment-section { border-top: 2px solid var(--border-color); padding-top: 20px; }
+.payment-options { display: flex; gap: 10px; margin-top: 10px; }
+.pay-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.qr-box {
+    margin-top: 15px;
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px dashed #6366f1;
+}
+
+.qr-code-placeholder {
+    background: white;
+    color: black;
+    padding: 30px;
+    font-weight: 900;
+    border-radius: 10px;
+    margin: 12px 0;
+    display: inline-block;
+    font-size: 15px;
+    letter-spacing: 2px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Botón Finalizar Reserva Estilo Trofeo / Pro */
+.finalizar-container {
+    margin-top: 25px;
+    border-top: 3px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.btn-finalizar-reserva {
+    width: 100%;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-finalizar-reserva:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #0f172a;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .nav-list.active { display: flex; }
+    .canchas-grid { grid-template-columns: 1fr; }
+    .reserva-meta-box { grid-template-columns: 1fr; }
+}
